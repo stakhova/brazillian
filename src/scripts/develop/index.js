@@ -110,13 +110,29 @@ function showComment(){
         }
     })
     $('.comment__button').click(function() {
-        $('.comment__list .comment__item:nth-of-type(n+5)').toggle();
+        $('.comment__list .comment__item:nth-of-type(n+5)').toggleClass('show');
         let buttonText = $('.comment__list .comment__item:nth-of-type(n+5)').is(':visible') ? 'Show Less' : 'Show More';
         $('.comment__button').text(buttonText);
     });
 }
 
 
+
+
+function addClassActive(){
+    function checkInput (){
+        let currentValue = $(this).val();
+        if( currentValue!== ''){
+            $(this).closest('div').addClass('active')
+        }else{
+            $(this).closest('div').removeClass('active')
+        }
+    }
+    $(document).on('input','.connect__item input', checkInput)
+    $(document).on('change','.connect__item input', checkInput)
+    $(document).on('change','.connect__item select', checkInput)
+    $(document).on('input','.connect__textarea textarea', checkInput)
+}
 
 
 function accordionFAQ() {
@@ -761,7 +777,7 @@ function showProduct() {
             const categoryTitle = $(this).find('.category__item-title').text().trim();
             const checkedCheckboxes = $(this).find('.category__item-list input[type="checkbox"]:checked');
             const checkedNames = checkedCheckboxes.map(function () {
-                return $(this).attr('name');
+                return $(this).val();
             }).get();
             obj[categoryTitle] = checkedNames;
         });
@@ -1136,7 +1152,8 @@ $(document).ready(function () {
     // $(window).on('load scroll', hideTopMenu);
     hideTopMenu();
     hideSideMenu();
-    showComment()
+    showComment();
+    addClassActive()
 });
 
 $(window).load(function () {});

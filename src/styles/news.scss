@@ -309,8 +309,13 @@
     display: flex;
     gap: 1.2rem;
     flex-direction: column;
+    transition: all 0.3s ease ;
     &:nth-of-type(n+5) {
       display: none;
+    }
+    &.show{
+      transition: all 0.3s ease ;
+      display: flex;
     }
   }
   &__item > h3{
@@ -335,11 +340,12 @@
     padding: 1.2rem 1.6rem;
     background-color: rgba(217, 195, 169, 0.3);
     & > *{
-      font: 400 1.4rem / normal var(--GS);
+      font: 400 1.4rem / 160% var(--GS);
     }
   }
   &__button{
     display: none;
+
   }
 }
 
@@ -491,6 +497,17 @@
   }
   .article__side  > .category__filter{
     display: none;
+  }
+  .news__review{
+   margin-top: 2.8rem;
+    padding-top: 2.8rem;
+  }
+  .comment__list{
+    gap:1.6rem;
+    margin-bottom: 1.6rem;
+  }
+  .comment{
+    margin-bottom: 4rem;
   }
 
 }
