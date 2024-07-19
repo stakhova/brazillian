@@ -1,0 +1,342 @@
+//= partials/head.html
+
+<div class="wrap">
+  //= partials/header.html
+
+  <div class="wrap__main">
+    <section class="section__top">
+      <div class="container">
+        <h1 class="section__top-title">Contact Us</h1>
+
+        <div class="section__top-breadcrumbs">
+          <a href="#">home</a>
+          <a href="#">contact us</a>
+        </div>
+      </div>
+    </section>
+    <section class="contact__top">
+      <div class="contact__top-back img">
+        <img src="./img/back-connect.png" alt="">
+      </div>
+      <div class="container">
+        <div class="contact__top-img img">
+          <img src="./img/form-img-2.png" alt="">
+        </div>
+        <div class="contact__top-flex">
+          <div class="contact__top-info">
+            <div class="section__title">
+              <span class="side">contact</span>
+              <h2>Reach Out & <br>
+                Connect With Us</h2>
+            </div>
+            <p class="section__subtitle">
+              Lorem ipsum dolor sit amet consectetur. Arcu morbi at nisl rhoncus quam. Faucibus praesent fringilla lectus neque sed. Sagittis fermentum fusce sit vulputate varius egestas scelerisque senectus. Nisi venenatis in elementum etiam dolor.
+            </p>
+          </div>
+          <ul class="connect__social-list contact__top-list">
+            <li class="connect__social-item">
+              <div class="connect__social-icon img">
+                <img src="./img/form-location.svg" alt="">
+              </div>
+              <a href="">Locations</a>
+            </li>
+            <li class="connect__social-item">
+              <div class="connect__social-icon img">
+                <img src="./img/form-telegram.svg" alt="">
+              </div>
+              <a href="mailto:sales@brazilfloors.com" style="text-decoration: underline">sales@brazilfloors.com</a></li>
+            <li class="connect__social-item">
+              <div class="connect__social-icon img">
+                <img src="./img/form-phone.svg" alt="">
+              </div>
+              <a href="tel:8009090730">800-909-0730</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+    <section class="touch">
+      <div class="container">
+        <div class="touch__flex">
+          <div class="touch__info">
+            <div class="section__title vertical">
+              <span class="side">contact</span>
+              <h2>Get in Touch</h2>
+            </div>
+            <p class="section__subtitle">Lorem ipsum dolor sit amet consectetur. Arcu morbi at nisl rhoncus quam. Faucibus praesent fringilla lectus neque sed. Sagittis fermentum fusce sit. Sagittis fermentum fusce sit. Sagittis fermentum fusce sit. Sagittis fermentum fusce sit. </p>
+            <div class="touch__social">
+              <h3>Social Network:</h3>
+              <div class="touch__social-list">
+                <a href="" class="img">
+                  <img src="./img/touch-facebook.svg" alt="">
+                </a>
+                <a href="" class="img">
+                  <img src="./img/touch-insta.svg" alt="">
+                </a>
+                <a href="" class="img">
+                  <img src="./img/touch-x.svg" alt="">
+                </a>
+                <a href="" class="img">
+                  <img src="./img/touch-linkedIn.svg" alt="">
+                </a>
+                <a href="" class="img">
+                  <img src="./img/touch-youtube.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <form class="connect__form touch__form">
+            <input type="hidden" name="action" value="contact-touch">
+            <div class="touch__form-row">
+              <div class="connect__input connect__item">
+                <img src="./img/form-person.svg" alt="">
+                <input type="text" name="name" placeholder="Your Name">
+              </div>
+              <div class="connect__input connect__item">
+                <img src="./img/phone-form.svg" alt="">
+                <input type="text" name="phone" placeholder="Your Phone">
+              </div>
+            </div>
+            <div class="touch__form-row">
+              <div class="connect__input connect__item">
+                <img src="./img/form-email.svg" alt="">
+                <input type="text" name="email" placeholder="Your Email">
+              </div>
+              <div class="connect__select connect__item">
+                <img src="./img/service.svg" alt="">
+                <select class="" name="service" data-placeholder="Choose Service">
+                  <option value="">Choose Service</option>
+                  <option value="1">Service 1</option>
+                  <option value="2">Service 2</option>
+                  <option value="3">Service 3</option>
+                </select>
+              </div>
+
+
+            </div>
+
+
+            <div class="connect__textarea">
+              <textarea type="text" name="message" placeholder="Write Message"></textarea>
+            </div>
+            <button class="section__button beige little">get in touch</button>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="map">
+      <div class="container">
+        <div class="section__title vertical">
+          <span class="side">map</span>
+          <h2>Where People Can Find <br>
+            Brazil Floors</h2>
+        </div>
+        <form action="" class="map__search section__form">
+          <div class="section__form-input">
+            <input type="text" placeholder="Search here" name="search">
+          </div>
+          <button> </button>
+          <div class="map__search-result">
+            <div class="map__search-list">
+            </div>
+          </div>
+        </form>
+        <div class="map__block">
+          <div class="map__item" id="map"></div>
+
+          <script>
+            let mapIcon = './img/map-icon.svg';
+            let positionMaps = [{lat:32.051586, lng:34.768923, text:'<p>AudioLab</p>'}, {lat:31.336262414700833,lng:121.58951675983221, text:'<p>M&C Co Ltd<p>'}, {lat:25.11789776352507, lng: 55.22465875412054, text:'<p>M&C Co Ltd<p>'}, {lat:24.123811998788522,  lng: 120.67971048293326, text:'<p>DIMI Co Ltd<p>'}, {lat:51.63329886689616,  lng: -0.17606865833644766, text:'<p>KMR Audio<p>'}];
+            (g => {
+              var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary",
+                      q = "__ib__", m = document, b = window;
+              b = b[c] || (b[c] = {});
+              var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams,
+                      u = () => h || (h = new Promise(async (f, n) => {
+                        await (a = m.createElement("script"));
+                        e.set("libraries", [...r] + "");
+                        for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+                        e.set("callback", c + ".maps." + q);
+                        a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                        d[q] = f;
+                        a.onerror = () => h = n(Error(p + " could not load."));
+                        a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                        m.head.append(a)
+                      }));
+              d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+            })({
+              key: "AIzaSyD7jbxIjm7k-6EPVnLLKkrPDFNcgvGeLt4",
+              v: "weekly",
+            });
+          </script>
+        </div>
+      </div>
+    </section>
+    <section class="location">
+      <div class="container">
+        <div class="tab location__tab">
+          <div class="tab__header location__tab-header">
+            <button class="tab__header-item"><img src="./img/showroow.svg" alt=""><span>Showroom</span></button>
+            <button class="tab__header-item"><img src="./img/warehouse.svg" alt=""><span>Warehouse</span></button>
+          </div>
+          <div class="tab__content location__tab-contect">
+            <div class="tab__content-item">
+              <ul class="location__list">
+                <li class="location__list-item">
+                  <div class="location__icon">
+                    <img src="./img/location-white.svg" alt="">
+                  </div>
+                  <div class="location__info">
+                    <h3>Our Location</h3>
+                    <a >625 @ David Blake Road, <br>
+                      Adventureland, LA 14536, USA</a>
+                  </div>
+                </li>
+                <li class="location__list-item">
+                  <div class="location__icon">
+                    <img src="./img/location-white.svg" alt="">
+                  </div>
+                  <div class="location__info">
+                    <h3>Our Location</h3>
+                    <a >625 @ David Blake Road, <br>
+                      Adventureland, LA 14536, USA</a>
+                  </div>
+                </li>
+                <li class="location__list-item">
+                  <div class="location__icon">
+                    <img src="./img/location-white.svg" alt="">
+                  </div>
+                  <div class="location__info">
+                    <h3>Our Location</h3>
+                    <a >625 @ David Blake Road, <br>
+                      Adventureland, LA 14536, USA</a>
+                  </div>
+                </li>
+                <li class="location__list-item">
+                  <div class="location__icon">
+                    <img src="./img/location-white.svg" alt="">
+                  </div>
+                  <div class="location__info">
+                    <h3>Our Location</h3>
+                    <a >625 @ David Blake Road, <br>
+                      Adventureland, LA 14536, USA</a>
+                  </div>
+                </li>
+                <li class="location__list-item">
+                  <div class="location__icon">
+                    <img src="./img/location-white.svg" alt="">
+                  </div>
+                  <div class="location__info">
+                    <h3>Our Location</h3>
+                    <a >625 @ David Blake Road, <br>
+                      Adventureland, LA 14536, USA</a>
+                  </div>
+                </li>
+                <li class="location__list-item">
+                  <div class="location__icon">
+                    <img src="./img/location-white.svg" alt="">
+                  </div>
+                  <div class="location__info">
+                    <h3>Our Location</h3>
+                    <a >625 @ David Blake Road, <br>
+                      Adventureland, LA 14536, USA</a>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+            <div class="tab__content-item">
+              <ul class="location__list">
+
+                <li class="location__list-item">
+                  <div class="location__icon">
+                    <img src="./img/location-white.svg" alt="">
+                  </div>
+                  <div class="location__info">
+                    <h3>Our Location</h3>
+                    <a >625 @ David Blake Road, <br>
+                      Adventureland, LA 14536, USA</a>
+                  </div>
+                </li>
+                <li class="location__list-item">
+                  <div class="location__icon">
+                    <img src="./img/location-white.svg" alt="">
+                  </div>
+                  <div class="location__info">
+                    <h3>Our Location</h3>
+                    <a >625 @ David Blake Road, <br>
+                      Adventureland, LA 14536, USA</a>
+                  </div>
+                </li>
+                <li class="location__list-item">
+                  <div class="location__icon">
+                    <img src="./img/location-white.svg" alt="">
+                  </div>
+                  <div class="location__info">
+                    <h3>Our Location</h3>
+                    <a >625 @ David Blake Road, <br>
+                      Adventureland, LA 14536, USA</a>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact__banner">
+      <div class="contact__banner-img img">
+        <img src="./img/contact-bottom.png" alt="">
+      </div>
+      <div class="container">
+        <div class="contact__banner-block">
+          <div class="section__title">
+            <span class="side">vacancy</span>
+            <h2>Looking For <br>
+              Flooring Work? </h2>
+          </div>
+          <a class="section__phone" href="tel:8009090730">
+            <div class="section__phone-icon img">
+              <img src="./img/form-phone.svg" alt="">
+            </div>
+            <span>800-909-0730</span>
+          </a>
+          
+        </div>
+        
+        
+      </div>
+    </section>
+    <section class="contact__bottom">
+       <div class="container">
+         <div class="contact__bottom-flex">
+           <h3 class="contact__bottom-title">Newsletter</h3>
+           <form action="" class="contact__bottom-form">
+             <input type="hidden" name="action" value="contact">
+             <div class="contact__bottom-input">
+               <input type="text" name="name" placeholder="Your Name">
+             </div>
+             <div class="contact__bottom-input">
+               <input type="text" name="email" placeholder="Your Email">
+             </div>
+             <button class="section__button beige little">
+               send
+             </button>
+           </form>
+         </div>
+       </div>
+    </section>
+  </div>
+  //= partials/footer.html
+</div>
+
+//= partials/scripts.html
+
+</body>
+</html>

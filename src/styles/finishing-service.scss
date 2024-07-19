@@ -1,0 +1,205 @@
+.finishing{
+  &__guarantee{
+      .container{
+        padding: 8rem;
+      }
+    .guarantee__subtitle{
+      font-size: 1.6rem;
+      max-width: 106.2rem;
+    }
+    .guarantee__info h3{
+      font-size: 2rem;
+    }
+    .guarantee__info p{
+      font-size: 1.6rem;
+    }
+    .guarantee__item{
+      padding: 6.4rem 4rem ;
+      gap:6.4rem;
+    }
+  }
+}
+
+.design{
+  .section__list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    max-width: 39rem;
+    align-items: center;
+    & > *{
+      white-space: nowrap;
+    }
+    &>*:after{
+      background: url(../img/check-black.svg) center / 2.4rem 2.4rem no-repeat;
+    }
+  }
+  .container{
+    padding: 4rem 0;
+  }
+  &__info{
+    padding: 1rem 1rem 1rem 8rem ;
+    display: flex;
+    flex-direction: column;
+    gap:3.6rem;
+  }
+  .section__subtitle{
+    margin-top: -1.2rem;
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    & > *{
+      width: 50%;
+    }
+    &.reverse{
+      flex-direction: row-reverse;
+      .design__item{
+        padding: 1rem 8rem;
+      }
+    }
+  }
+
+  &__img{
+    max-width: 58rem;
+    height: 100%;
+  }
+}
+
+.different{
+  .container{
+    padding: 6rem 8rem 4rem;
+  }
+  &__flex{
+    display: flex;
+    gap:3rem;
+    margin-top: 6rem;
+  }
+  &__progress{
+    width: calc(50% - 1.5rem);
+    & > h3{
+      font: 600 1.6rem / normal var(--GS);
+      margin-bottom: 1.6rem;
+      text-transform: uppercase;
+    }
+    &:first-child{
+      .expert__progress-bar {
+        background-color: var(--color-beige-dark);
+      }
+      .expert__progress-item:after{
+        background-color: rgba(217, 195, 169, 0.6);
+      }
+    }
+  }
+  .section__subtitle{
+    text-align: center;
+    max-width: 106.2rem;
+    margin: 1.2rem auto 0;
+  }
+  .expert__progress{
+    gap:3.3rem;
+  }
+  .expert__progress-bar {
+    height: 3.2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .expert__progress-item:after{
+    height: 3.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .expert__progress-title{
+   color: white;
+    position: relative;
+    z-index: 1;
+  }
+  .expert__progress-title h3{
+    font-weight: 400;
+    padding-left: 1.2rem;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@media only screen and (max-width: 666px) {
+  .design__item{
+    flex-direction: column-reverse;
+    gap:2.4rem;
+  }
+  .design__item > *{
+    width: 100%;
+  }
+  .design__img{
+    width: 100vw;
+    margin: 0 -1.6rem;
+    height: 70vw;
+  }
+  .design__info{
+    padding: 0;
+  }
+  .design__item.reverse{
+    flex-direction: column-reverse;
+  }
+  .design__block{
+    display: flex;
+    gap:4rem;
+    flex-direction: column;
+  }
+  .design .section__title h2{
+    font-size: 2.8rem;
+  }
+  .design .section__subtitle{
+    font-size: 1.2rem;
+  }
+  .design__info{
+    gap:2.4rem;
+  }
+  .design .section__list > *:after {
+    background: url(../img/check-black.svg) center / 1.6rem 1.6rem no-repeat;
+  }
+  .wrap .different .container{
+    padding: 2rem 1.6rem 2rem;
+  }
+  .different .section__subtitle{
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+  }
+  .different__flex{
+    margin-top: 4rem;
+    gap:2.8rem;
+    flex-direction: column;
+    & > *{
+      width: 100%;
+    }
+  }
+  .different__progress > h3{
+    font-size: 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+  .different .expert__progress-title h3{
+    font-size: 1.4rem;
+  }
+  .different .expert__progress{
+    gap:2.4rem
+  }
+  .different .expert__progress-title h4{
+    bottom: unset;
+  }
+  .finishing__guarantee .guarantee__subtitle{
+    font-size: 1.2rem;
+  }
+  .finishing__guarantee .guarantee__item{
+    padding: 3.6rem 2.4rem;
+    gap:2.4rem;
+  }
+  .finishing__guarantee .guarantee__info h3{
+    font-size: 1.6rem;
+  }
+  .finishing__guarantee .guarantee__info p{
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,67 @@
+
+
+.ability{
+  background: rgba(217, 195, 169, 0.60);
+  .container{
+    padding: 0 0 0 8rem;
+  }
+  &__img{
+    width: 81.9rem;
+    height: 42.6rem;
+  }
+  &__flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__list{
+    gap:5rem;
+    & > *{
+      font: 600 2.4rem / 140% var(--GS);
+      text-transform: uppercase;
+      padding-left: 6.8rem;
+      &:after{
+        width: 4.8rem;
+        height: 4.8rem;
+        background: url(../img/check-black.svg) center / 4.8rem 4.8rem no-repeat;
+      }
+    }
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 666px) {
+  .wrap .ability .container{
+    padding: 5rem 0 0;
+  }
+  .ability__flex{
+    flex-direction: column;
+    gap:4.8rem;
+    align-items: flex-start;
+  }
+  .ability__list{
+    gap:2.8rem;
+    padding: 0 1.6rem;
+  }
+  .ability__img{
+    width: 100%;
+    height: auto;
+  }
+  .ability__list > *{
+    font-size: 1.4rem;
+    padding-left: 3.6rem;
+  }
+  .ability__list > *:after{
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url(../img/check-black.svg) center / 2.4rem 2.4rem no-repeat;
+  }
+
+
+}
+
+
+

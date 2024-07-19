@@ -5,8 +5,6 @@
         <div class="container">
             <div class="footer__flex">
                 <div class="footer__item">
-
-
                     <div class="footer__block">
                         <div class="footer__logo img">
                             <img src="./../img/logo-footer.svg" alt="">
@@ -15,7 +13,7 @@
                             <img src="./../img/logo-footer-mob.svg" alt="">
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur. Vitae accumsan nibh quam urna sed tortor sit nam. Amet faucibus vulputate ullamcorper. </p>
-                        <form action="" class="footer__form">
+                        <form action="" class="footer__form footer__form-bottom">
                             <input type="hidden" name="action" value="subscribe">
                             <input type="email" name="email" placeholder="Email Address">
                             <button ></button>
@@ -103,80 +101,131 @@
         </div>
     </div>
 </footer>
-<div class="modal modal__cart">
+
+
+
+<div class="modal modal__solution">
     <div class="modal__wrap">
         <div class="modal__content ">
             <div class="modal__close img">
-                <img src="./img/close.svg" alt="">
+                <img src="./../img/close.svg" alt="">
             </div>
             <div class="modal__overflow">
-                <h3 class="modal__cart-title">Cart</h3>
-                <div class="cart__block">
-                    <div class="cart__item" data-id="111">
-                        <div class="cart__flex">
-                            <div class="cart__img img">
-                                <img src="./img/product1.png" alt="">
-                            </div>
+                <div class="modal__solution-content">
 
-                            <div class="cart__flex-item">
-                                <div class="cart__product">
-                                    <h2>Dell N4064F / Powerconnect 8164F Switch | 48x 10 SFP+ | 2x 40GB QSFP+ | Dual AC</h2>
-                                    <h3>48-Port 1000-BASE-T | 4x 10G SFP+ | dual PSU | Rack-Ears [...]</h3>
-                                    <a class="cart__product-link" href="#">More Details</a>
-                                </div>
-                                <div class="cart__item-bottom">
-                                    <h3 class="cart__price cart__price-full">
-                                        EUR 298,00
-                                    </h3>
-                                    <div class="cart__counter">
-                                        <div class="product__counter">
-                                            <button class="product__counter-minus"></button>
-                                            <input type="number" value="1">
-                                            <button class="product__counter-plus"></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
+                <h3 class="modal__title">Get in touch with us & enjoy
+                    Free Evaluation</h3>
+                <form class="modal__form connect__form">
 
+                    <div class="connect__input connect__item">
+                        <img src="./../img/form-person.svg" alt="">
+                        <input name="name" type="text" placeholder="Your Name">
                     </div>
-                    <div class="cart__item" data-id="333">
-                        <div class="cart__flex">
-                            <div class="cart__img img">
-                                <img src="./img/product1.png" alt="">
-                            </div>
-                            <div class="cart__flex-item">
-                                <div class="cart__product">
-                                    <h2>Dell N4064F / Powerconnect 8164F Switch | 48x 10 SFP+ | 2x 40GB QSFP+ | Dual AC</h2>
-                                    <h3>48-Port 1000-BASE-T | 4x 10G SFP+ | dual PSU | Rack-Ears [...]</h3>
-                                    <a class="cart__product-link" href="#">More Details</a>
-                                </div>
-                                <div class="cart__item-bottom">
-                                    <h3 class="cart__price cart__price-full">
-                                        EUR 298,00
-                                    </h3>
-                                    <div class="cart__counter">
-                                        <div class="product__counter">
-                                            <button class="product__counter-minus"></button>
-                                            <input type="number" value="1">
-                                            <button class="product__counter-plus"></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="connect__input connect__item">
+                        <img src="./../img/form-email.svg" alt="">
+                        <input type="text" name="email" placeholder="Your Email">
                     </div>
+                    <div class="connect__select connect__item">
+                        <img src="./../img/service.svg" alt="">
+                        <select class="" name="service" data-placeholder="Choose Service">
+                            <option value="">Choose Service</option>
+                            <option value="1">Service 1</option>
+                            <option value="2">Service 2</option>
+                            <option value="3">Service 3</option>
+                        </select>
+                    </div>
+                    <div class="connect__input connect__item">
+                        <img src="./../img/calendar.svg" alt="">
+                        <input type="text" name="date" class="modal__datepicker" placeholder="Choose Time Slot" >
+                    </div>
+                    <div class="connect__textarea">
+                        <textarea type="text" name="message" placeholder="Write Message"></textarea>
+                    </div>
+                    <button class="section__button beige little">SEND</button>
+
+                </form>
                 </div>
-                <div class="cart__total">
-                    <div class="cart__total-bottom">
-                        <h3>Total:</h3>
-                        <h3 class="cart__total-price">EUR 1192,00</h3>
+                <div class="modal__solution-success">
+                    <div class="img">
+                        <img src="./../img/susses.svg" alt="">
                     </div>
-                    <a href="" class="cart__total-buy section__button">Buy it now</a>
-                </div>
 
+                    <h3 class="modal__title">Thank You For Your Feedback!</h3>
+                    <p class="modal__text">Lorem ipsum dolor sit amet consectetur. Arcu morbi at nisl rhoncus quam. Faucibus praesent fringilla lectus neque sed. Sagittis fermentum fusce sit vulputate varius egestas scelerisque senectus. </p>
+                    <button class="modal__ok">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal__contact">
+    <div class="modal__wrap">
+        <div class="modal__content ">
+            <div class="modal__close img">
+                <img src="./../img/close.svg" alt="">
+            </div>
+            <div class="modal__overflow">
+                <div class="modal__solution-content">
+
+
+                    <h3 class="modal__title">Get in touch with us & enjoy
+                        Free Evaluation</h3>
+                    <form class="modal__form connect__form">
+
+                        <div class="connect__input connect__item">
+                            <img src="./../img/form-person.svg" alt="">
+                            <input name="name" type="text" placeholder="Your Name">
+                        </div>
+                        <div class="connect__input connect__item">
+                            <img src="./../img/form-email.svg" alt="">
+                            <input type="text" name="email" placeholder="Your Email">
+                        </div>
+                        <div class="connect__select connect__item">
+                            <img src="./../img/service.svg" alt="">
+                            <select class="" name="service" data-placeholder="Choose Service">
+                                <option value="">Choose Service</option>
+                                <option value="1">Service 1</option>
+                                <option value="2">Service 2</option>
+                                <option value="3">Service 3</option>
+                            </select>
+                        </div>
+                        <div class="connect__textarea">
+                            <textarea type="text" name="message" placeholder="Write Message"></textarea>
+                        </div>
+                        <button class="section__button beige little">SEND</button>
+
+                    </form>
+                </div>
+                <div class="modal__solution-success">
+                    <div class="img">
+                        <img src="./../img/susses.svg" alt="">
+                    </div>
+
+                    <h3 class="modal__title">Thank You For Your Feedback!</h3>
+                    <p class="modal__text">Lorem ipsum dolor sit amet consectetur. Arcu morbi at nisl rhoncus quam. Faucibus praesent fringilla lectus neque sed. Sagittis fermentum fusce sit vulputate varius egestas scelerisque senectus. </p>
+                    <button class="modal__ok">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal__thank">
+    <div class="modal__wrap">
+        <div class="modal__content ">
+            <div class="modal__close img">
+                <img src="./../img/close.svg" alt="">
+            </div>
+            <div class="modal__overflow">
+                <div class="modal__solution-success">
+                    <div class="img">
+                        <img src="./../img/susses.svg" alt="">
+                    </div>
+
+                    <h3 class="modal__title">Thank You For Your Feedback!</h3>
+                    <p class="modal__text">Lorem ipsum dolor sit amet consectetur. Arcu morbi at nisl rhoncus quam. Faucibus praesent fringilla lectus neque sed. Sagittis fermentum fusce sit vulputate varius egestas scelerisque senectus. </p>
+                    <button class="modal__ok">OK</button>
+                </div>
             </div>
         </div>
     </div>

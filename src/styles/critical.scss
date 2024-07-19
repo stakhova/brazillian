@@ -33,6 +33,7 @@
     --color-beige: #D9C3A9;
     --color-beige-dark: #B49C86;
     --color-opacity:rgba(19, 30, 41, 0.85);
+    --color-input:#BAB7B7;
     --GS:'GeneralSans', sans-serif;
 }
 
@@ -99,11 +100,27 @@ button {
 h1 {
     margin: 0;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+input:-internal-autofill-selected {
+    background-color: transparent;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
 
 html {
     font-size: 10px;
     scroll-behavior: smooth;
 }
+
 
 
 @media only screen and (max-width: 1366px) {

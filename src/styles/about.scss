@@ -313,6 +313,11 @@
   }
   .choose__flex{
     flex-direction: column;
+    gap:4rem;
+    margin-top: 2rem;
+  }
+  .choose__info{
+    width: 100%;
   }
   .about__flex{
     flex-direction: column;
@@ -325,14 +330,52 @@
     width: 100vw;
     height: 100vw;
   }
+  .choose__img{
+    width: 90%;
+    margin: 0;
+    margin-left: 2rem;
+  }
+  .choose .section__experience.beige{
+    top: 70%;
+    left: -3rem;
+  }
+  .choose__list{
+    max-width: 100%;
+    gap:1.6rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2.4rem;
+  }
+  .choose__list li:after{
+    width: 1.6rem;
+    height: 1.6rem;
+    background: url(../img/check-beige.svg) center / 1.6rem 1.6rem no-repeat;
+  }
+  .choose__list:after{
+    display: none;
+  }
+  .wrap .choose .container{
+    padding-bottom: 1rem;
+  }
+  .choose__list > *{
+    width: calc(50% - 0.5rem);
+    font-size: 1.2rem;
+  }
   .do__slider{
     margin-top: 2.8rem;
   }
+  .do__item{
+    gap:0.4rem;
+  }
   .do__img{
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
   }
   .do__subtitle{
     font-size: 1.4rem;
+  }
+  .wrap .about .container{
+    padding: 2.4rem;
   }
   .about__item{
     width: 100%;
@@ -361,6 +404,46 @@
   }
   .about__subtitle{
     margin: 2.8rem 0 1.2rem;
+    font-size: 1.4rem;
+  }
+  .step__img{
+    border-width: 0.6rem;
+  }
+  .step__list{
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 3rem;
+    gap:3rem;
+  }
+  .step__item{
+    gap:0.8rem;
+  }
+  .step__item span{
+    font-size: 1.2rem;
+  }
+  .step__item h3{
+    font-size: 1.6rem;
+  }
+  .step__list:after{
+    top: 49%;
+    width: 100vw;
+    height: 100%;
+    background: url(../img/step-line-mob.svg) center / 100vw 100% no-repeat;
+  }
+  .wrap .step .container{
+    padding-bottom: 6rem;
+  }
+  .step__img{
+    width: 35vw;
+    height: 35vw;
+  }
+  .step__item:nth-child(even){
+    margin: 0 0 0 auto;
+  }
+  .services__list{
+    border-radius: 255.1rem;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(191, 206, 194, 0.40) 0%, #FFF 100%);
   }
 
 }
+

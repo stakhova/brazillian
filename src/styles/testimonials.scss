@@ -1,0 +1,157 @@
+.review{
+  &__top{
+    background-color:var(--color-primary-light) ;
+    .section__title{
+      padding: 0;
+      text-align: center;
+      margin-bottom: 3.2rem;
+    }
+    .container{
+      padding: 6rem 8rem;
+    }
+  }
+  .container{
+    padding: 6rem 8rem 8rem;
+  }
+  .section__title{
+    text-align: center;
+    margin: 0 auto;
+    width: max-content;
+    h2{
+      font-size: 5.6rem;
+    }
+    .side{
+      left: -4.9rem;
+    }
+
+  }
+  &__list{
+    margin: 6rem auto 0 ;
+    max-width: 105.2rem;
+    width: 100%;
+    gap:6rem 3rem;
+    flex-wrap: wrap;
+  }
+
+  .testimonial__item{
+    padding:2.4rem;
+    width: calc(50% - 1.5rem);
+    gap:2.8rem;
+  }
+  .testimonial__quote{
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+  .testimonial__star > *{
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  .testimonial__quote:after{
+    width: 5.6rem;
+    height: 5.6rem;
+    background: url(../img/review-quote.svg) center /  5.6rem 5.6rem no-repeat;
+  }
+  .testimonial__author:after{
+    display: none;
+  }
+  .testimonial__author{
+    margin: 0 ;
+    padding: 0;
+    color: var(--color-text);
+  }
+  .testimonial__bottom{
+    margin: 0 ;
+    align-items: center;
+  }
+
+}
+.discover{
+  background-color: var(--color-primary-light);
+  .container{
+    padding: 0 8rem 0 0;
+  }
+  &__flex{
+    display: flex;
+    gap:8rem;
+    align-items: flex-end;
+  }
+  &__slider{
+    height: 71rem;
+    width: 56%;
+  }
+  &__info{
+    width: calc(44% - 8rem);
+    padding-bottom: 9.6rem;
+    display: flex;
+    flex-direction: column;
+    gap:3.2rem;
+  }
+  .section__nav{
+    margin-top: 4.8rem;
+  }
+  .section__nav > button:before{
+    background-color: var(--color-white);
+  }
+
+}
+
+
+@media only screen and (max-width: 666px) {
+
+  .review__top .section__title{
+    margin-bottom: 2.8rem;
+  }
+  .review .testimonial__item:not(:first-child){
+    display: flex;
+  }
+  .review .testimonial__item{
+    width: 100%;
+  }
+  .review .section__title h2{
+    font-size: 2.4rem;
+  }
+  .review .section__title{
+    margin: 0 ;
+    text-align: left ;
+  }
+  .review .section__title .side{
+    left: -3.9rem;
+  }
+  .review__top .section__title > *{
+    font-size: 2.8rem;
+  }
+  .review .testimonial__quote:after {
+    width: 4.2rem;
+    height: 3.9rem;
+    background: url(../img/quote.svg) center / 4.2rem 3.9rem no-repeat;
+  }
+  .review .testimonial__item{
+    gap:1.6rem;
+    padding: 2.4rem 1.6rem;
+  }
+  .review__list{
+    gap:2.8rem;
+  }
+  .review .testimonial__star > *{
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  .discover__slider{
+    height: 50vw;
+    width: 100vw;
+    margin: 0 -1.6rem;
+  }
+  .discover__flex{
+    flex-direction: column;
+    gap: 3.6rem;
+  }
+  .discover__info{
+    width: 100%;
+    padding-bottom: 2rem;
+    gap:2rem;
+  }
+  .discover .section__nav{
+    margin-top: 2rem;
+  }
+}
+
