@@ -16,6 +16,13 @@
     &-list{
       .connect__social-item{
         background-color: var(--color-white);
+        transition: 0.2s ease;
+
+        &:hover{
+          .connect__social-icon{
+            background-color: var(--color-beige-dark);
+          }
+        }
       }
       .connect__social-item{
         max-width: 29.8rem;
@@ -156,8 +163,8 @@
         }
       }
     }
-    .section__button.little{
-      padding: 1.3rem 8.4rem 1.3rem 2rem;
+    .little .section__button{
+      padding: 1.2rem 8.4rem 1.2rem 2rem;
       width: 18.8rem;
     }
     &-message{
@@ -203,6 +210,10 @@
       & > *{
         width: 2.8rem;
         height: 2.8rem;
+        transition: 0.2s ease;
+        &:hover{
+          filter: invert(72%) sepia(21%) saturate(380%) hue-rotate(347deg) brightness(87%) contrast(82%);
+        }
       }
     }
   }
@@ -218,7 +229,7 @@
         width: calc(50% - 1.5rem);
       }
     }
-    .section__button{
+    .section__button-wrap{
       margin: -1.2rem 0 0 auto;
     }
   }
@@ -302,7 +313,7 @@
   .touch__form-row > *{
     width: 100%;
   }
-  .touch__form .section__button{
+  .touch__form .section__button-wrap{
     margin: 0 auto;
   }
   .contact__top-list .connect__social-item a{
@@ -397,6 +408,9 @@
   }
   .contact__bottom-message{
     text-align: center;
+  }
+  .contact__bottom .little .section__button{
+    width: calc(100vw - 3.2rem);
   }
 
 }

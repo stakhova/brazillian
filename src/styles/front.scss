@@ -274,6 +274,8 @@
       width: 14.3rem;
       justify-content: flex-start;
       transition: .2s ease;
+      overflow: hidden;
+      border: none;
       &:after{
         content: '';
         right: 2rem;
@@ -283,15 +285,32 @@
         background: url("../img/arrow-white-little.svg") center/2.4rem 1.2rem no-repeat;
       }
       &:before{
-        content: '';
-        right: 6.4rem;
-        top:50%;
-        transform: translateY(-50%);
-        position:absolute;
-        background: rgba(255, 255, 255, 0.2);
-        height: 2rem;
-        width: 0.1rem;
+        //content: '';
+        //right: 6.4rem;
+        //top:50%;
+        //transform: translateY(-50%);
+        //position:absolute;
+        //background: rgba(255, 255, 255, 0.2);
+        //height: 2rem;
+        //width: 0.1rem;
+        content: "";
+        z-index: -1;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150%;
+        height: 150%;
+
+        transition-duration: 800ms;
+        transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
       }
+    }
+    .swiper-button-next:before{
+      background-color: var(--color-primary);
+    }
+    .swiper-button-prev:before{
+      background-color: var(--color-beige-dark);
     }
   }
 
@@ -301,7 +320,10 @@
     bottom: 4.1rem;
     left: 0;
     &:hover{
-      background-color:var(--color-beige-dark);
+      &:before{
+        bottom: -50%;
+      }
+      //background-color:var(--color-beige-dark);
     }
 
   }
@@ -310,7 +332,10 @@
     background-color:  var(--color-primary-light);
     transform: translateX(-50%) rotate(-90deg);
     &:hover{
-      background-color:var(--color-text);
+      &:before{
+        bottom: -50%;
+      }
+      //background-color:var(--color-text);
     }
     &-wrap{
       background-color: var(--color-text-light);

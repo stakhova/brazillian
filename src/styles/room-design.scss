@@ -1,0 +1,235 @@
+.room{
+  &__top{
+    .container{
+    padding: 4rem 8rem 6rem;
+    }
+    &-flex{
+      display: flex;
+      gap:8rem;
+      align-items: center;
+    }
+    &-img{
+      width: 45%;
+    }
+    &-info{
+      width:calc(55% - 8rem);
+      display: flex;
+      flex-direction: column;
+      gap:2.8rem;
+    }
+  }
+  background-color: rgba(217, 195, 169, 0.3);
+  .container{
+    padding: 0;
+  }
+  &__flex{
+    display: flex;
+    //align-items: flex-start;
+    //height: calc(100vh - 11rem);
+    max-height: 88rem;
+    height: calc(100vh - 11rem);
+    overflow: hidden;
+  }
+  &__wrap{
+    width: 36%;
+    padding: 4rem 8rem 4.4rem 3rem ;
+    max-height: calc(100vh - 11rem);
+    //min-height: calc(100vh - 11rem);
+    height: 88rem;
+
+    overflow: auto;
+    &::-webkit-scrollbar {
+      background-color: transparent;
+      width: 0.4rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-beige-dark);
+    }
+  }
+  &__img{
+    width: 100%;
+    height: 100%;
+    &-wrap{
+      width: 64%;
+      //max-height: calc(100% - 11rem);
+      overflow: hidden;
+      //max-height: 88rem;
+    }
+    &-wrap{
+      position: relative;
+    }
+    &-btn{
+      display: flex;
+      gap:1.6rem;
+      position: absolute;
+      bottom: 2.4rem;
+      right: 2.4rem;
+      & > *{
+        width: 6.8rem;
+        height: 6.8rem;
+      }
+    }
+  }
+  &__content{
+    display: flex;
+    flex-direction: column;
+    gap:4.4rem;
+  }
+  &__step{
+    display: flex;
+    flex-direction: column;
+    gap:2.8rem;
+    .section__title.vertical{
+      align-items: flex-start;
+      margin-bottom: -2rem;
+    }
+  }
+  &__block{
+    display: flex;
+    flex-direction: column;
+    gap:1.6rem;
+    & > h2 {
+      font:  600 1.6rem / 160% var(--GS);
+    }
+
+  }
+  &__item{
+    padding: 0.8rem;
+    background-color: var(--color-white);
+    width: calc((100% - 2rem)/3);
+    display: flex;
+    flex-direction: column;
+    gap:1.2rem;
+    cursor: pointer;
+    h3{
+      font: 500 1.2rem / 1.9rem var(--GS);
+      text-align: center;
+    }
+    transition: opacity 1s ease-in-out;
+    &.active{
+      background-color: var(--color-beige);
+      position: relative;
+      transition: opacity 1s ease-in-out;
+      &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0.1rem solid var(--color-beige-dark);
+        pointer-events: none;
+      }
+    }
+    &-color{
+      aspect-ratio: 1/1;
+    }
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    &-img{
+      width: 100%;
+      img{
+        aspect-ratio: 1/1;
+      }
+    }
+    &-color{
+      gap:1.4rem;
+      .room__item{
+        padding: 0;
+        width: calc((100% - 7rem)/6);
+        &:after{
+          border: 0.1rem solid #18332F;
+        }
+      }
+    }
+  }
+  &__modal{
+    .modal__content{
+      max-width: 80vw;
+    }
+    .modal__overflow{
+      padding: 0;
+      z-index: 4;
+      position: relative;
+      overflow: hidden;
+      max-height: 90vh;
+    }
+  }
+}
+
+@media only screen and (max-width: 666px) {
+  .room__top-flex{
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap:2.4rem;
+  }
+  .room__top-flex > *{
+    width: 100%;
+  }
+  .wrap .room__top .container{
+    padding: 2.4rem 1.6rem 6rem;
+  }
+  .room__top-info{
+    gap:1.6rem;
+    .section__button-wrap{
+     margin-top: 0.8rem;
+    }
+  }
+  .wrap .room .container{
+    padding: 0;
+  }
+  .room__flex{
+    max-height: 100%;
+    flex-direction: column;
+    & > *{
+      width: 100%;
+    }
+  }
+  .room__wrap{
+    padding: 2.4rem 1.6rem 2.4rem;
+  }
+  .room__wrap .section__title .side{
+    font-size: 1rem;
+    padding-left: 2.2rem;
+  }
+  .room__step .section__title.vertical{
+    margin-bottom: -1.6rem;
+  }
+  .room__step{
+   gap:2.4rem
+  }
+  .room__block{
+    gap:1.2rem;
+  }
+  .room__item{
+   padding: 0.8rem 0.4rem;
+  }
+  .room__block > h2{
+    font-size: 1.4rem;
+  }
+  .room__item h3{
+
+    line-height: 1.6rem;
+  }
+  .room__content{
+    gap:2.4rem;
+  }
+  .room__wrap{
+    max-height: 56rem;
+  }
+  .room__img-btn{
+    bottom: 1.6rem;
+    right: 1.6rem;
+  }
+  .room__img-btn > *{
+    width: 4rem;
+    height: 4rem;
+  }
+  .room__img-wrap{
+    height: 81vw;
+  }
+}
+

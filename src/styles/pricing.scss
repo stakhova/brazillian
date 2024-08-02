@@ -90,17 +90,32 @@
     gap:2.8rem;
     align-items: center;
     justify-content: space-between;
-    &:not(:nth-child(4n)):not(:first-child) .section__button{
+    &:not(:nth-child(4n)):not(:first-child) .section__button-wrap{
       border:0.1rem solid var(--color-beige);
-      color:var(--color-beige-dark);
       font: 600 1.4rem / normal var(--GS);
       background-color: transparent ;
-      &:before{
-        background: rgba(180, 156, 134, 0.40);
+      &:before, &:after{
+        background-color: var(--color-beige-dark);
       }
-      &:after{
-        background: url(../img/arrow-beige-little.svg) center / 2.5rem 0.9rem no-repeat;
+      .section__button{
+        color:var(--color-beige-dark);
+        &:before{
+          background: rgba(180, 156, 134, 0.40);
+        }
+        &:after{
+          background: url(../img/arrow-beige-little.svg) center / 2.5rem 0.9rem no-repeat;
+        }
+
       }
+      &:hover{
+        .section__button{
+          color: white;
+          &:before,&:after{
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+
     }
     &:nth-child(4n), &:nth-child(1){
       .price__top{
@@ -122,6 +137,7 @@
       }
     }
   }
+
 }
 
 .reliable{
@@ -151,6 +167,23 @@
     gap:2.8rem;
     position: relative;
     width: calc(50% - 4rem);
+    &:hover{
+      .reliable__item-img{
+        background-color: var(--color-primary);
+      }
+      .reliable__item-img img{
+        filter: brightness(0) invert(1);
+        color: var(--floens-white, #ffffff);
+
+        animation-name: wobble-horizontal-hover;
+
+        animation-duration: 1s;
+
+        animation-timing-function: ease-in-out;
+
+        animation-iteration-count: 1;
+      }
+    }
     &:nth-child(odd):after{
       content: '';
       position: absolute;
@@ -334,10 +367,6 @@
     gap:0.8rem;
   }
 
-  .reliable__item:not(:first-child){
-    display: none;
-
-  }
   .reliable__item:nth-child(odd):after{
     display: none;
   }
@@ -434,5 +463,15 @@
   }
   .special__text > *{
     font-size: 1.4rem;
+  }
+  .price__item .section__button-wrap .section__button{
+    padding: 1.6rem 5.4rem 1.6rem 2rem;
+    width:100%;
+  }
+  .price__item .section__button-wrap{
+    width:100%;
+  }
+  .price .section__button:before {
+    right: 4.8rem;
   }
 }

@@ -76,6 +76,23 @@
     gap:2.8rem;
     position: relative;
     width: calc(50% - 4rem);
+    &:hover{
+      .about__item-img{
+        background-color: var(--color-primary);
+      }
+      .about__item-img img{
+        filter: brightness(0) invert(1);
+        color: var(--floens-white, #ffffff);
+
+        animation-name: wobble-horizontal-hover;
+
+        animation-duration: 1s;
+
+        animation-timing-function: ease-in-out;
+
+        animation-iteration-count: 1;
+      }
+    }
     &:nth-child(odd):after{
       content: '';
       position: absolute;
@@ -95,7 +112,9 @@
       border-radius: 50%;
       background-color: var(--color-primary-light);
       position: relative;
+      transition:all 400ms ease;
       img{
+        transition:all 400ms ease;
         width: 3.6rem;
         height: 3.6rem;
         position: absolute;
@@ -174,6 +193,9 @@
       background: radial-gradient(50% 50% at 50% 50%, rgba(180, 156, 134, 0.10) 0%, #FFF 100%);
       z-index: -1;
     }
+    img{
+      opacity: 0;
+    }
   }
   &__info{
     width: 50%;
@@ -204,10 +226,20 @@
     flex-direction: column;
     gap:0.8rem;
     width: calc((100% - 6rem)/3);
+    &:hover{
+      .do__img img{
+        transform: scale(1.1);
+      }
+    }
   }
   &__img{
-    height:16rem;
+
+    height:30rem;
     margin-bottom: 1.2rem;
+    overflow: hidden;
+    img{
+      transition: all 500ms ease;
+    }
   }
   &__title{
     font: 600 1.6rem / 160% var(--GS);
@@ -273,8 +305,17 @@
       color:var(--color-beige-dark);
       font: 600 1.4rem / 140% var(--GS);
       text-transform: uppercase;
+      transition: all 500ms ease;
+    }
+    &:hover{
+      .step__img img{
 
-
+        transform: scale(1.1);
+      }
+       span{
+        color: white;
+        background-color: var(--color-beige-dark);
+      }
 
     }
   }
@@ -285,6 +326,7 @@
     border-radius: 50%;
     margin-bottom: 1rem;
     position: relative;
+    transition: all 500ms ease;
     &:after{
       content: '';
       position: absolute;
@@ -297,6 +339,7 @@
     }
 
     img{
+      transition: all 500ms ease;
       border-radius: 50%;
     }
   }
@@ -392,10 +435,13 @@
     width: 100%;
   }
   .about__item:not(:first-child){
-    display: none;
+    //display: none;
+  }
+  .about__list{
+    gap:3rem;
   }
   .about__item:nth-child(odd):after{
-    display: none;
+    //display: none;
   }
   .about__gallery{
     grid-template-rows: repeat(2, calc(50vw - 3.7rem));
