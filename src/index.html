@@ -731,6 +731,597 @@
             </div>
         </section>
 
+
+        <div class="modal modal__calculator calculator">
+            <div class="modal__wrap">
+                <div class="modal__content" >
+                    <div class="modal__close img">
+                        <img src="./img/close.svg" alt="">
+                    </div>
+                    <div class="modal__overflow">
+                        <div class="section__title vertical">
+                            <span class="side">calculator</span>
+                            <h2>Get Your Estimation Right Now!</h2>
+                        </div>
+                        <div class="tab location__tab">
+                            <div class="tab__header location__tab-header">
+                                <button class="tab__header-item"><img src="./img/showroow-green.svg" alt=""><span>Installation</span></button>
+                                <button class="tab__header-item"><img src="./img/warehouse-green.svg" alt=""><span>Sanding / Refinishing</span></button>
+                            </div>
+                            <div class="tab__content location__tab-content">
+                                <div class="tab__content-item">
+                                    <div class="calculator__block">
+                                        <div class="calculator__list">
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>How Many Square Feet Total?</h3>
+                                                    <div class="calculator__sub-input active big">
+                                                        <input  name="square" type="number" data-start="1.75" placeholder="Type here" >
+                                                        <span>sqft</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>Need to remove any existing flooring?</h3>
+                                                    <div class="calculator__radio-group">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio1"  name="existing" data-check="1" data-plus="0">
+                                                            <label for="radio1">Yes</label>
+                                                        </div>
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio2"  name="existing" data-check="0" data-plus="0">
+                                                            <label for="radio2">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="calculator__sub">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check1" data-plus="1" >
+                                                            <label for="check1">Existing Carpet</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check2" data-plus="2.50">
+                                                            <label for="check2">Existing Tile Floors</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check3" data-plus="1.50" >
+                                                            <label for="check3">Existing Wood Flooring</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check4" data-plus="0.25">
+                                                            <label for="check4">Baseboard removal</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check5" data-plus="1.25">
+                                                            <label for="check5">Existing Vinyl Flooring</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check6" data-plus="0.25" >
+                                                            <label for="check6">Shoe molding removal</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>Need garbage disposal?</h3>
+                                                    <div class="calculator__radio-group">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio111" data-plus="0.25" name="garbage" >
+                                                            <label for="radio111">Yes</label>
+                                                        </div>
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio222" data-plus="0" name="garbage"   >
+                                                            <label for="radio222">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>What type of flooring Will we install?</h3>
+                                                </div>
+                                                <div class="calculator__sub active">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check11" data-plus="0" >
+                                                            <label for="check11">Unfinished</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check22" data-plus="0.25">
+                                                            <label for="check22">Bamboo</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check33" data-plus="0.25" >
+                                                            <label for="check33">Prefinished</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check44"  data-plus="0.25">
+                                                            <label for="check44">Vinil Floors</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check55" data-plus="0.25">
+                                                            <label for="check55">Engineered</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>What is the thickness of the flooring ?     </h3>
+                                                </div>
+                                                <div class="calculator__sub active">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check111" data-plus="0">
+                                                            <label for="check111">5 mm</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check222" data-plus="0">
+                                                            <label for="check222">½ Inch </label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check333" data-plus="0">
+                                                            <label for="check333">6 mm</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check444" data-plus="0">
+                                                            <label for="check444">¾ Inch</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>What is the witness of the flooring?</h3>
+                                                </div>
+                                                <div class="calculator__sub active">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check1111" data-plus="0" >
+                                                            <label for="check1111">1.1/2 inch</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check2222" data-plus="0">
+                                                            <label for="check2222">5 inch</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check3333" data-plus="0">
+                                                            <label for="check3333">2.1/4 inch</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check4444" data-plus="0">
+                                                            <label for="check4444">6 Inch</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check5555" data-plus="0">
+                                                            <label for="check5555">3.1/4 inch</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check6666" data-plus="0">
+                                                            <label for="check6666">Above 6 inch</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check7777" data-plus="0">
+                                                            <label for="check7777">4 Inch</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section__button-wrap black little calculator__button" >
+                                                <button class="section__button">calculate price</button>
+                                            </div>
+                                            <h3 class="calculator__total">Total Estimate: <span></span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab__content-item">
+                                    <div class="calculator__block">
+                                        <div class="calculator__list">
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>How Many Square Feet Total?</h3>
+                                                    <div class="calculator__sub-input active big">
+                                                        <input  name="square" type="number" data-start="1.75" placeholder="Type here" >
+                                                        <span>sqft</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>Need to remove any existing flooring?</h3>
+                                                    <div class="calculator__radio-group">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio1s"  name="existings" data-check="1" data-plus="0">
+                                                            <label for="radio1s">Yes</label>
+                                                        </div>
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio2s"  name="existings" data-check="0" data-plus="0">
+                                                            <label for="radio2s">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="calculator__sub">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check1s" data-plus="1" >
+                                                            <label for="check1s">Existing Carpet</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check2s" data-plus="1">
+                                                            <label for="check2s">Existing Vinyl Floors</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>Need garbage disposal?</h3>
+                                                    <div class="calculator__radio-group">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio111s" data-plus="0.25" name="garbages" >
+                                                            <label for="radio111s">Yes</label>
+                                                        </div>
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio222s" data-plus="0" name="garbages"   >
+                                                            <label for="radio222s">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>What type of flooring Will we install?</h3>
+                                                </div>
+                                                <div class="calculator__sub active">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check11s" data-plus="0" >
+                                                            <label for="check11s">New Flooring</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check22s" data-plus="0.25">
+                                                            <label for="check22s">Existing Flooring</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>What is the thickness of the flooring ?</h3>
+                                                </div>
+                                                <div class="calculator__sub active">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check111s" data-plus="0">
+                                                            <label for="check111s">½ Inch</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check222s" data-plus="0">
+                                                            <label for="check222s">¾ Inch </label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="calculator__item calculator__item-sand">
+                                                <div class="calculator__item-top">
+                                                    <h3>Are there water or pet stains that need to be replaced?</h3>
+                                                    <div class="calculator__radio-group">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio1e"  name="pet" data-check="1" data-plus="0">
+                                                            <label for="radio1e">Yes</label>
+                                                        </div>
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio2ee"  name="pet" data-check="0" data-plus="0">
+                                                            <label for="radio2ee">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="calculator__sub">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item" style="display: none">
+                                                            <input type="checkbox" id="check1sssa"  data-plus="10" >
+                                                            <label for="check1sssa"></label>
+                                                        </div>
+                                                        <h3 class="calculator__sub-title">How many Square feet need to be replaced?</h3>
+                                                        <div class="calculator__sub-input active calculator__item-min">
+                                                            <input type="number" name="square" placeholder="0" min="30" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>Is there any space or holes to be filled?</h3>
+                                                    <div class="calculator__radio-group calculator__radio-plus ">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio111ss" data-plus="0" name="space" data-plusPrice="250" >
+                                                            <label for="radio111ss">Yes</label>
+                                                        </div>
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio222ss" data-plus="0" name="space"   >
+                                                            <label for="radio222ss">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="calculator__item calculator__item-sand ">
+                                                <div class="calculator__item-top">
+                                                    <h3>Is there any furniture to be moved?</h3>
+                                                    <div class="calculator__radio-group">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio1sss"  name="moved" data-check="1" data-plus="0">
+                                                            <label for="radio1sss">Yes</label>
+                                                        </div>
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio2sss"  name="moved" data-check="0" data-plus="0">
+                                                            <label for="radio2sss">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="calculator__sub">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item " style="display: none">
+                                                            <input type="checkbox" id="check1sss" data-plus="50" >
+                                                            <label for="check1sss"></label>
+                                                        </div>
+                                                        <h3 class="calculator__sub-title">How many pieces need to be moved?</h3>
+                                                        <div class="calculator__sub-input active">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator__item calculator__item-sand">
+                                                <div class="calculator__item-top">
+                                                    <h3>Is there any Stairs to be Sanded?</h3>
+                                                    <div class="calculator__radio-group">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio1ssss"  name="stairs" data-check="1" data-plus="0">
+                                                            <label for="radio1ssss">Yes</label>
+                                                        </div>
+                                                        <div class="calculator__radio-item">
+                                                            <input type="radio" id="radio2ssss"  name="stairs" data-check="0" data-plus="0">
+                                                            <label for="radio2ssss">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="calculator__sub">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item" style="display: none">
+                                                            <input type="checkbox" id="check1ssss" data-plus="40"  >
+                                                            <label for="check1ssss"></label>
+                                                        </div>
+                                                        <h3 class="calculator__sub-title">How Many Steps Should Be Sanded?</h3>
+                                                        <div class="calculator__sub-input active">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator__item">
+                                                <div class="calculator__item-top">
+                                                    <h3>What color Do you want To Have on your new floors?</h3>
+                                                </div>
+                                                <div class="calculator__sub active">
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check1ss" data-plus="0" >
+                                                            <label for="check1ss">Natural</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calculator__sub-item">
+                                                        <div class="calculator__radio-item">
+                                                            <input type="checkbox" id="check2ss" data-plus="0.25">
+                                                            <label for="check2ss">Stain</label>
+                                                        </div>
+                                                        <div class="calculator__sub-input">
+                                                            <input type="number" name="square" placeholder="0" >
+                                                            <span>sqft</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="section__button-wrap black little calculator__button" >
+                                                <button class="section__button">calculate price</button>
+                                            </div>
+                                            <h3 class="calculator__total">Total Estimate: <span></span></h3>
+
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     //= partials/footer.html
 </div>

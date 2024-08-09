@@ -1299,6 +1299,7 @@ function toggleModal(btn, modal) {
             $('.modal__testimonial-video source').attr('src', video);
             $('.modal__testimonial-video video')[0].load();
         }
+        calculator()
         modal.show();
         $('body').css('overflow', 'hidden');
         return false;
@@ -1348,6 +1349,11 @@ function showPassword() {
 function resetModal() {
     $('.modal__solution-content').show();
     $('.modal__solution-success').hide();
+
+    $('.modal__total-content').show();
+    $('.modal__total-success').hide();
+
+
 }
 
 function showLink() {
@@ -1425,158 +1431,475 @@ function stateSelect() {
 function calculator(){
     let blockSqft = 0
     let generalSqft  = 0
-    let showTotal = false
-
-    $(document).on('change', '.calculator__item-top input[type=radio]', function (){
-        let sub = $(this).closest('.calculator__item').find('.calculator__sub')
-        blockSqft = 0;
-        if($(this).data('check') == 1 ){
-            sub.addClass('active')
-        }else{
-            sub.removeClass('active')
-        }
-    })
-
-    $(document).on('change','.calculator__sub-input.big input', function (){
-        console.log(5555, $(this))
-        generalSqft = +$(this).val()
-        $('.calculator__sub-error').remove()
-        console.log(33,generalSqft)
-    })
-
-    $('.calculator__item').each(function() {
-        let block = $(this);
-
-        block.find('input[type="checkbox"]').on('change', function() {
-            let checkedCheckbox = block.find('input[type="checkbox"]:checked');
-            let unCheckedText = block.find('.calculator__sub-input:not(.active) input');
-            let checkedCount = block.find('input[type="checkbox"]:checked').length;
-            unCheckedText.val('')
+    let validInput  = false
+    let validRadio = false
+    let validError = false
+    let validInputSub = false
+    let validMin = true
+    let obj = {}
 
 
-            console.log(checkedCount, )
 
-            if (checkedCount == 0) {
-                checkedCheckbox.closest('.calculator__item').find('.calculator__sub-input').removeClass('active')
-            } else{
-                $(this).closest('.calculator__sub-item').find('.calculator__sub-input').toggleClass('active')
-            }
-            if (checkedCount > 1) {
-                checkedCheckbox.closest('.calculator__sub-item').find('.calculator__sub-input').addClass('active')
+    function calc(){
+        $('.calculator__item').each(function() {
+            let block = $(this);
 
-            } else {
-                $(this).closest('.calculator__sub').find('.calculator__sub-error').remove()
-                checkedCheckbox.closest('.calculator__item').find('.calculator__sub-input').removeClass('active')
-            }
+
+            $(document).on('change', '.calculator__item-top input[type=radio]', function (){
+                    let sub = $(this).closest('.calculator__item').find('.calculator__sub')
+                    blockSqft = 0;
+
+
+                    if($(this).closest('.calculator__item').hasClass('calculator__item-sand')) {
+                        console.log('hasClasshasClasshasClass')
+
+                        if($(this).data('check') == 1 ){
+                            sub.addClass('active')
+                            sub.find('.calculator__radio-item input').prop('checked', true)
+                            console.log(111111)
+
+                        }else{
+                            sub.removeClass('active')
+                            console.log(2222222)
+                            sub.find('.calculator__sub-input input').val('')
+                            sub.find('.calculator__radio-item input').prop('checked', false)
+                            sub.find('.calculator__sub-error').remove()
+                            if(sub.find('.calculator__item-min').length > 0){
+                                validMin = true
+                                console.log('54545454545454',validMin)
+                            }
+                        }
+
+                    } else{
+                        if($(this).data('check') == 1 ){
+                            sub.addClass('active')
+                        }else{
+                            sub.removeClass('active')
+                            sub.find('.calculator__sub-input input').val('')
+                            sub.find('.calculator__radio-item input').prop('checked', false)
+                            sub.find('.calculator__sub-input').removeClass('active')
+                            sub.find('.calculator__sub-error').remove()
+                        }
+                    }
+
+                })
+
+            $(document).on('change','.calculator__sub-input.big input', function (){
+                console.log(5555, $(this))
+                generalSqft = +$(this).val()
+                $(this).closest('.calculator__item').find('.calculator__sub-error').remove()
+                console.log(33,generalSqft)
+
+                blockSqft = 0
+                $('.calculator__item').find('.calculator__sub-input:not(.big):not(.unlimited) input').each(function (){
+                    blockSqft += +$(this).val()
+                    console.log('blockSqft1111',blockSqft)
+                })
+
+                console.log('blockSqft',blockSqft)
+                if(blockSqft > generalSqft){
+
+                    $(this).closest('.calculator__item').find('.calculator__item-top').append('<p class="calculator__sub-error">Change count of sqrt</p>')
+                    validInput = false;
+                } else{
+                    validInput = true;
+                    $(this).closest('.calculator__item').find('.calculator__sub-error').remove()
+
+                }
+
+            })
+
+
+            block.find('input[type="radio"]').on('change', function() {
+                if($(this).closest('.calculator__item').find('.calculator__sub').length == 0){
+                    $(this).closest('.calculator__item').find('.calculator__sub-error').remove();
+                    validRadio = true;
+                }
+            })
+
+
+
+
+            block.find('input[type="checkbox"]').on('change', function() {
+                let checkedCheckbox = block.find('input[type="checkbox"]:checked');
+                let unCheckedText = block.find('.calculator__sub-input:not(.active) input');
+                let checkedCount = block.find('input[type="checkbox"]:checked').length;
+                unCheckedText.val('')
+
+                $(this).closest('.calculator__item').find('.calculator__sub-error').remove();
+
+                console.log(checkedCount)
+
+                if (checkedCount == 0) {
+                    checkedCheckbox.closest('.calculator__item').find('.calculator__sub-input').removeClass('active')
+                } else{
+                    $(this).closest('.calculator__sub-item').find('.calculator__sub-input').toggleClass('active')
+                }
+                if (checkedCount > 1) {
+                    checkedCheckbox.closest('.calculator__sub-item').find('.calculator__sub-input').addClass('active')
+
+                } else {
+                    $(this).closest('.calculator__sub').find('.calculator__sub-error').remove()
+                    checkedCheckbox.closest('.calculator__item').find('.calculator__sub-input').removeClass('active')
+                }
+
+
+            });
+
+            block.find('.calculator__sub-input input').change(function() {
+                blockSqft = 0
+                block.find('.calculator__sub-input:not(.big):not(.unlimited) input').each(function (){
+                    blockSqft += +$(this).val()
+                })
+                console.log('blockSqft',blockSqft)
+                console.log('generalSqft',generalSqft)
+                let errorInserted = false;
+                if(blockSqft > generalSqft){
+                    console.log(2222)
+                    $(this).closest('.calculator__sub-item').find('.calculator__radio-item .calculator__sub-error').remove()
+                    $(this).closest('.calculator__sub-item').find('.calculator__radio-item').append('<p class="calculator__sub-error">More than general sqft</p>')
+                     validInputSub = false
+                } else{
+                    console.log(3333)
+                    validInputSub = true
+                    $(this).closest('.calculator__sub').find('.calculator__sub-error').remove()
+
+                }
+            })
+
 
         });
+        $(document).on('change','.calculator__check', function (){
 
-        block.find('.calculator__sub-input:not(.big) input').on('change', function() {
-            blockSqft = 0
-            block.find('.calculator__sub-input:not(.big) input').each(function (){
-                blockSqft += +$(this).val()
-            })
-            console.log('blockSqft',blockSqft)
-            if(blockSqft > generalSqft){
-                $(this).closest('.calculator__item').addClass('error')
-                $(this).closest('.calculator__sub-item').find('.calculator__radio-item').append('<p class="calculator__sub-error">More than general sqft</p>')
-                showTotal = false
-            } else{
-                $(this).closest('.calculator__item').removeClass('error')
-                $(this).closest('.calculator__sub').find('.calculator__sub-error').remove()
-                showTotal = true
+            console.log(1222222, $(this).prop('checked'))
+            if($(this).prop('checked')==true){
+                $('.calculator__sub-item-color').addClass('active')
+            }else {
+                $('.calculator__sub-item-color').removeClass('active')
             }
         })
-
-    });
+    }
+    calc()
 
     $(document).on('click','.calculator__button',function (){
         let fullPrice  = 0
-        let startPrice = $(this).closest('.calculator__list').find('.big input').data('start')
+        let blockWrap = $(this).closest('.calculator__block')
+        let startPrice = +blockWrap.find('.big input').data('start')
         let addPrice = 0
+        let standartAdd = 0
         let sqrtPrice = 0
+        let sub_check = []
+        let sqrtFull = +blockWrap.find('.big input').val()
 
 
+        let total_sqrt = 0
+        let total_price = 0
+
+
+
+        calc()
 
         let countOfSqrtFull = 0;
-        $(this).closest('.calculator__list').find('input:checked').each(function() {
 
+
+        blockWrap.find('.calculator__radio-plus input:checked').each(function() {
+            if($(this).data('plusprice')){
+
+                console.log()
+                standartAdd += parseFloat($(this).data('plusprice'))
+            }
+
+        })
+
+
+        // blockWrap.find('input:checked').each(function() {
+        //
+        //
+        //     console.log('checked', $(this))
+        //     let countOfSqrt = +$(this).closest('.calculator__sub-item').find('.calculator__sub-input input').val()
+        //     console.log('countOfSqrt',countOfSqrt)
+        //
+        //     if( countOfSqrt > 0 && countOfSqrt!== '' && $(this).data('plus') !== 0){
+        //         countOfSqrtFull += +countOfSqrt
+        //         sqrtPrice += countOfSqrt * (parseFloat($(this).data('plus')) + startPrice)
+        //         console.log('sqrtPrice',sqrtPrice)
+        //         console.log('sqrtPrice', countOfSqrt, parseFloat($(this).data('plus')), sqrtPrice)
+        //
+        //     }else{
+        //         if(parseFloat($(this).data('plus')) >= 0 && !countOfSqrt){
+        //             console.log('data(plus)', parseFloat($(this).data('plus')))
+        //             addPrice += parseFloat($(this).data('plus'))
+        //             console.log('addPrice',addPrice)
+        //         }
+        //     }
+        //
+        // })
+
+
+
+        blockWrap.find('input:checked').each(function() {
+
+
+            console.log('checked', $(this))
             let countOfSqrt = +$(this).closest('.calculator__sub-item').find('.calculator__sub-input input').val()
             console.log('countOfSqrt',countOfSqrt)
+            console.log('parseFloat',parseFloat($(this).data('plus')))
+            let key  = $(this).closest('.calculator__item').find('.calculator__item-top h3').text().replace(/\s+/g, '_').toLowerCase()
+
 
             if( countOfSqrt > 0 && countOfSqrt!== '' && $(this).data('plus') !== 0){
-                countOfSqrtFull += +countOfSqrt
-                sqrtPrice += countOfSqrt * (parseFloat($(this).data('plus')) + startPrice)
-                console.log('sqrtPrice',sqrtPrice)
-                console.log('sqrtPrice', countOfSqrt, parseFloat($(this).data('plus')), sqrtPrice)
-                 showTotal = true
-            }else{
-                if(parseFloat($(this).data('plus')) >= 0 && countOfSqrt == ''){
-                    console.log('data(plus)', parseFloat($(this).data('plus')))
-                    addPrice += parseFloat($(this).data('plus'))
+                sqrtPrice += countOfSqrt * (parseFloat($(this).data('plus')))
+
+
+
+                let checkObject = {
+                    sqrt: countOfSqrt,
+                    price: countOfSqrt * (parseFloat($(this).data('plus'))),
+                    name : $(this).next('label').text()
+                };
+                let infoObject = {};
+                infoObject[key] = checkObject;
+                sub_check.push(infoObject);
+                console.log('sub_check1111111', sub_check);
+
+
+                // let name  = $(this).next('label').text().replace(/\s+/g, '_').toLowerCase()
+                // let checkObject = {
+                //     sqrt: countOfSqrt,
+                //     price: sqrtPrice,
+                //     question: $(this).closest('.calculator__item').find('.calculator__item-top h3').text()
+                // };
+                // let infoObject = {};
+                // infoObject[name] = checkObject;
+                // sub_check.push(infoObject);
+                // console.log('arrCheck22222', sub_check);
+
+
+            }
+
+
+            if( countOfSqrt > 0 && $(this).data('plus') == 0){
+
+                let checkObject = {
+                    sqrt: countOfSqrt,
+                    price: 0,
+                    name : $(this).next('label').text()
+                };
+                let infoObject = {};
+                infoObject[key] = checkObject;
+                sub_check.push(infoObject);
+                console.log('sub_check5555', sub_check);
+
+
+                // let name  = $(this).next('label').text().replace(/\s+/g, '_').toLowerCase()
+                // let checkObject = {
+                //     sqrt: countOfSqrt,
+                //     price: sqrtPrice,
+                //     question: $(this).closest('.calculator__item').find('.calculator__item-top h3').text()
+                // };
+                // let infoObject = {};
+                // infoObject[name] = checkObject;
+                // sub_check.push(infoObject);
+                // console.log('arrCheck22222', sub_check);
+
+
+            }
+
+
+            if(parseFloat($(this).data('plus')) >= 0 && !countOfSqrt){
+
+                    let pricePlus = parseFloat($(this).data('plus'))
+                    console.log('data(plus)',pricePlus )
+                    addPrice += pricePlus
                     console.log('addPrice',addPrice)
-                    showTotal = true
+
+
+                    let checkObject = {
+                        price: pricePlus * sqrtFull ,
+                        name: $(this).next('label').text()
+                    };
+                    let infoObject = {};
+                    infoObject[key] = checkObject;
+                    sub_check.push(infoObject);
+                    console.log('sub_check22222', sub_check);
+
+                    // let name  = $(this).next('label').text().replace(/\s+/g, '_').toLowerCase()
+                    // let checkObject = {
+                    //     price: parseFloat($(this).data('plus')) * sqrtFull ,
+                    //     question: $(this).closest('.calculator__item').find('.calculator__item-top h3').text()
+                    // };
+                    // let infoObject = {};
+                    // infoObject[name] = checkObject;
+                    // sub_check.push(infoObject);
+                    // console.log('arrCheck22222', sub_check);
+                }
+
+
+            if( $(this).data('plusprice') > 0 ){
+
+                let checkObject = {
+                    price: $(this).data('plusprice'),
+                    name: $(this).next('label').text()
+                };
+                let infoObject = {};
+                infoObject[key] = checkObject;
+                sub_check.push(infoObject);
+                console.log('sub_check22222', sub_check);
+            }
+
+        })
+
+
+
+
+
+
+        blockWrap.find('.calculator__radio-group').each(function() {
+            console.log(1)
+            if ( $(this).find('input[type="radio"]:checked').length == 0) {
+                console.log(2)
+                $(this).closest('.calculator__item').find('.calculator__item-top .calculator__sub-error').remove()
+                $(this).closest('.calculator__item').find('.calculator__item-top').append('<p class="calculator__sub-error">This field is required</p>')
+                validRadio = false
+            } else{
+                console.log(3)
+                validRadio = true
+                $(this).closest('.calculator__item').find('.calculator__sub-error').remove()
+            }
+        });
+
+
+
+        blockWrap.find('.calculator__sub.active').each(function() {
+            console.log('....', $(this).find('input[type="checkbox"]:checked').length)
+
+
+            if(validInputSub!==false){
+                console.log('....222222')
+                if ($(this).find('input[type="checkbox"]:checked').length === 0) {
+                    console.log('11')
+                    validInputSub = false
+                    $(this).closest('.calculator__item').find('.calculator__item-top .calculator__sub-error').remove()
+                    $(this).closest('.calculator__item').find('.calculator__item-top').append('<p class="calculator__sub-error">This field is required</p>')
+                } else{
+                    console.log('22')
+                    validInputSub = true
+                    $(this).closest('.calculator__item').find('.calculator__sub-error').remove()
+                }
+                let inputValue = $(this).find('.calculator__sub-input.active input[type=number]').val()
+                console.log('inputValue33333',inputValue)
+                if(inputValue == "" || inputValue <= 0 ){
+                    $(this).closest('.calculator__item').find('.calculator__item-top').append('<p class="calculator__sub-error">Value must be greater than 0</p>')
+                    validInputSub = false
+                } else{
+                    validInputSub = true
                 }
             }
-            if(countOfSqrt == ''){
-                showTotal = false
-                $(this).closest('.calculator__sub-item').find('.calculator__sub-input').append('<p class="calculator__sub-error">This field is required</p>')
+            console.log(44444,$('.calculator__sub-input.active').length)
+            if($('.calculator__sub-input.active:not(.big)').length == 0){
+                validInputSub = true
+            }
+
+        });
+
+
+        blockWrap.find('.calculator__item-min input').each(function() {
+            if($(this).closest('.calculator__sub').hasClass('active')){
+                console.log('activeactiveactive')
+                if( $(this).val() < 30){
+                    validMin = false
+                    console.log('validMin',validMin)
+                    $(this).closest('.calculator__sub-item').append('<p class="calculator__sub-error">Minimum 30sqft for this field</p>')
+                } else{
+                    validMin = true
+                    console.log('validMin',validMin)
+                    $(this).closest('.calculator__sub-item .calculator__sub-error').remove();
+                }
             }
         })
 
-        if($('.calculator__sub-error').length > 0){
-            showTotal = false
+
+
+        let errorCount = blockWrap.find('.calculator__sub-error').length
+
+        console.log('errorCount',errorCount)
+        if(errorCount == 0){
+            validError = true
         }
+        // $('.calculator__sub-error').remove();
 
+        console.log('valid',validInput,validRadio, validInputSub, validError, validMin)
 
-        $('.calculator__item').each(function() {
-            if ( $(this).find('.calculator__sub.active input[type="checkbox"]:checked').length === 0) {
-
-                $(this).find('.calculator__item-top').append('<p class="calculator__sub-error">This field is required</p>')
-                showTotal = false;
-                // return false; // Exit the loop
-            } else{
-                $(this).find('.calculator__sub-error').remove()
-            }
-        });
-        console.log(55555, $(this).closest('.calculator__list').find('.big input').val() == "")
-        if($(this).closest('.calculator__list').find('.big input').val() == ""){
-            showTotal = false
-            $(this).closest('.calculator__list').find('.calculator__item:first-of-type .calculator__item-top').append('<p class="calculator__sub-error">This field is required</p>')
-            $('.calculator__total').hide()
-        } else{
-            showTotal = true
-            $(this).closest('.calculator__list').find('.calculator__item:first-of-type .calculator__item-top .calculator__sub-error').remove()
-        }
-
-
-
-
-        if(showTotal){
-            let sqrtFull = +$(this).closest('.calculator__list').find('.big input').val()
+        if(validInput && validRadio && validInputSub && validError && validMin){
 
 
             console.log('startPrice', startPrice)
             console.log('addPrice', addPrice)
             console.log('sqrtFull',sqrtFull)
             console.log('sqrtPrice',sqrtPrice)
+            console.log('standartAdd',standartAdd)
             console.log('countOfSqrtFull',countOfSqrtFull)
-            console.log((startPrice + addPrice)*(sqrtFull - countOfSqrtFull) + sqrtPrice)
-            fullPrice = (startPrice + addPrice)*(sqrtFull - countOfSqrtFull) + sqrtPrice
-            // fullPrice = (startPrice + addPrice)*sqrtFull
-            // console.log('(startPrice + addPrice)',(startPrice + addPrice))
             console.log('fullPrice',fullPrice)
+            fullPrice = (addPrice + startPrice)*sqrtFull + sqrtPrice + standartAdd
+            // fullPrice = (startPrice + addPrice)*(sqrtFull - countOfSqrtFull) + sqrtPrice + standartAdd
+
             console.log('sqrtFull',sqrtFull)
-            $('.calculator__total span').text(`$${fullPrice}`)
-            $('.calculator__total').show()
+            // blockWrap.find('.calculator__total span').text(`$${parseFloat(fullPrice).toFixed(2)}`)
+            // blockWrap.find('.calculator__total').show()
+            blockWrap.find('.calculator__total-error').remove()
+
+
+            toogleModalWithoutClick($('.modal__total'));
+
+            let calculatorForm = $('.calculator__form');
+            validateForm(calculatorForm, function () {
+                ajaxCalculator();
+            });
+
+
         } else{
-            $('.calculator__total').hide()
-            $('html, body').animate({
-                scrollTop: $('.calculator__sub-error').offset().top - 170
-            }, 1000);
+            blockWrap.find('.calculator__total-error').remove()
+            blockWrap.find('.calculator__total').hide()
+            blockWrap.find('.calculator__button').after('<p class="calculator__total-error" >Some items not valid</p>')
+
+
+            // $('html, body').animate({
+            //     scrollTop: $('.calculator__sub-error').offset().top - 170
+            // }, 1000);
+        }
+
+
+
+        function ajaxCalculator(){
+            let email = $('.calculator__form').find('input[name=email]').val()
+            let phone = $('.calculator__form').find('input[name=phone]').val()
+            total_sqrt =  sqrtFull
+
+            basic_price = total_sqrt * startPrice
+            total_price =  fullPrice
+            color__stairs = $('.calculator__sub-item-color input[name=color]').val()
+
+            obj = {action: 'calculator', email, phone, total_sqrt, basic_price, total_price, sub_check, color__stairs};
+            $.ajax({
+                url: '/wp-admin/admin-ajax.php',
+                data: obj,
+                method: 'POST',
+                success: function (res) {
+                    console.log('success', res);
+                    $('.modal__total-content').hide();
+                    $('.modal__total-success').show();
+                },
+                error: function (error) {
+                    console.log('error', error);
+                }
+            });
+
         }
 
     })
+
+
+
 }
 
 function headerSubmenu(){
@@ -1701,6 +2024,8 @@ $(document).ready(function () {
     toggleModal($('.category__banner-btn'), $('.modal__contact'));
     toggleModal($('.compare__contact'), $('.modal__contact'));
     toggleModal($('.specifications__contact'), $('.modal__contact'));
+    toggleModal($('.product__info .section__button-wrap'), $('.modal__calculator'));
+    toggleModal($('.banner__block .section__button-wrap'), $('.modal__calculator'));
 
     tab();
 
@@ -1721,6 +2046,8 @@ $(document).ready(function () {
     showArticle();
     compareChange();
     animate();
+
+
 
     $(window).on('load scroll', checkCounters);
     $(window).on('load scroll', initProgressBar);

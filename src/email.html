@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/general-sans" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+
+        }
+        main{
+
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 24px ;
+            background: white;
+        }
+        p, h2, pre, h3{
+            margin: 0;
+        }
+        .email__logo{
+            margin-bottom:36px;
+            width: 207px;
+            height: auto;
+        }
+        .email__logo img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+
+        .email__title{
+            font:  600 20px / 140% 'General Sans';
+            margin-bottom: 8px;
+            color:#101828;
+            display: inline-block;
+        }
+        .email__subtitle{
+            font:  400 14px / 150% 'General Sans';
+            color:#4D4D4D;
+            padding: 8px 0 24px;
+            border-top: 1px solid rgba(191, 206, 194, 0.5) ;
+            border-bottom: 1px solid rgba(191, 206, 194, 0.5) ;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+
+
+        .email__item-title{
+            background: #18332F;
+            text-align: left;
+            padding: 16px 24px;
+            width: 100%;
+            text-transform: uppercase;
+            color:white;
+            font:  500 20px / 32px 'General Sans';
+        }
+
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        .email__count{
+            display: inline-block;
+        }
+        .email__left{
+            display: inline;
+        }
+        .email__price{
+            float: right;
+        }
+        .email__item{
+            padding: 16px;
+        }
+        .email__item:nth-child(even){
+            background: rgba(191, 206, 194, 0.3);
+        }
+        .email__count{
+            background: white;
+            border: 1px solid #BFCEC2;
+            max-width: 100px;
+            width: 100%;
+            padding: 8px 16px;
+        }
+        hr{
+            border: none;
+            border-bottom: 1px solid rgba(191, 206, 194, 0.5);
+            margin: 16px 0;
+
+
+        }
+        .email__count > *{
+            font:  500 14px / normal 'General Sans';
+        }
+        .email__subitem{
+            margin-left: 16px;
+            font:  500 16px / normal 'General Sans';
+            text-transform: capitalize;
+            display: inline;
+        }
+        .email__count-number{
+           color: #BFCEC2;
+           float: right;
+            font-size: 12px!important;
+        }
+        .email__price{
+            padding: 8px 0;
+            font:  600 16px / normal 'General Sans';
+        }
+        .email__item-total-count{
+            float: right;
+        }
+        .email__item-sub{
+            padding: 16px 0;
+        }
+        .email__item  >h4{
+            margin: 0;
+            font:  500 14px / normal 'General Sans';
+        }
+        .email__footer{
+
+            color:white;
+            width: 100%;
+        }
+        .email__social{
+            display: inline-block;;
+            width: 24px;
+            height: 24px;
+            margin-left: 8px;
+        }
+        .email__social-wrap {
+            display: inline-block;
+            float: right;
+        }
+        .email__icon{
+            color: white;
+            text-decoration: none;
+        }
+        .email__icon img{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+        .email__icon span{
+            font:  500 14px / 20px 'General Sans';
+            display: inline-block;
+            vertical-align: top;
+        }
+        .footer{
+            background :#18332F;
+            padding: 40px 24px;
+            margin:  0 -24px;
+        }
+        .email__logo-footer{
+            width: 181px;
+            height: auto;
+            display: inline-block;
+        }
+        .email__footer-bottom td{
+                width: calc(100%/3);
+        }
+
+        .email__regard{
+            font:  500 14px / 22px 'General Sans';
+            margin-bottom: 24px;
+        }
+
+        @media only screen and (max-width: 666px) {
+            .email__price{
+                float: none;
+                display: block;
+            }
+            .email__item-title{
+                font-size: 16px;
+                line-height: 20px;
+                text-transform: capitalize;
+            }
+            main{
+                padding: 24px 16px;
+            }
+            .email__logo{
+                margin-bottom: 16px;
+                width: 180px;
+            }
+            .email__title{
+                margin-top: -24px;
+                display: block;
+            }
+            .email__item-sub{
+                padding: 12px 0;
+            }
+            .email__subitem{
+                font-size: 14px;
+            }
+            .email__item{
+                padding: 12px ;
+            }
+            .email__logo-footer{
+                width: 140px;
+            }
+            /*.email__logo-footer{*/
+            /*    display: block;*/
+            /*    margin: 0 auto 10px;*/
+
+            /*}*/
+            /*.email__social-wrap{*/
+            /*    float: none;*/
+            /*    width: max-content;*/
+            /*    display: block;*/
+            /*    margin: 0 auto;*/
+            /*}*/
+            .email__social{
+                width: 20px;
+                height: 20px;
+                margin-left: 4px;
+            }
+            .footer{
+                padding: 24px 16px;
+            }
+            .email__footer-bottom{
+                display: block;
+            }
+            .email__footer-bottom td{
+                width: 100%;
+                display: block;
+            }
+            .email__subtitle{
+                line-height: 130%;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="email__logo">
+            <img src="./img/email__logo.png" alt="">
+        </div>
+        <hr style="margin: 0 0 40px 0">
+        <h3 class="email__title">
+            Dear Customer,
+        </h3>
+        <h3 class="email__subtitle">
+            Lorem ipsum dolor sit amet consectetur. Nulla vitae tincidunt commodo blandit dolor erat ornare. Vitae egestas amet ut adipiscing. Sed at amet duis ac etiam lobortis. Facilisi dolor pulvinar sed malesuada pellentesque augue. Lorem ipsum dolor sit amet consectetur. Nulla vitae tincidunt commodo blandit dolor erat ornare. Vitae egestas amet ut adipiscing. Sed at amet duis ac etiam lobortis. Facilisi dolor pulvinar sed malesuada pellentesque augue.
+        </h3>
+
+        <h2 class="email__item-title">your installation estimation </h2>
+
+        <div class="email__item">
+
+                <div class="email__left">
+                    <div class="email__count">
+                        <span>500</span>
+                        <span class="email__count-number">sqft</span>
+                    </div>
+                    <span class="email__subitem">
+                                Sq Ft Total
+                            </span>
+                </div>
+                <span class="email__price">
+                            +$2,456
+                        </span>
+
+        </div>
+        <div class="email__item">
+            <h4>Removal Existing Flooring</h4>
+            <div class="email__item-sub">
+                <div class="email__left">
+                    <div class="email__count">
+                        <span>500</span>
+                        <span class="email__count-number">sqft</span>
+                    </div>
+                    <span class="email__subitem">
+                                Existing Carpet
+                            </span>
+                </div>
+                <span class="email__price">
+                            +$456
+                        </span>
+
+
+            </div>
+            <div class="email__item-sub">
+                <div class="email__left">
+                    <div class="email__count">
+                        <span>500</span>
+                        <span class="email__count-number">sqft</span>
+                    </div>
+                    <span class="email__subitem">
+                                Sq Ft Total
+                            </span>
+                </div>
+                <span class="email__price">
+                            +$2,456
+                        </span>
+
+
+            </div>
+
+        </div>
+        <div class="email__item">
+            <h4>Removal Existing Flooring</h4>
+            <div class="email__item-sub">
+                <div class="email__left">
+                    <div class="email__count">
+                        <span>500</span>
+                        <span class="email__count-number">sqft</span>
+                    </div>
+                    <span class="email__subitem">
+                                Existing Carpet
+                            </span>
+                </div>
+                <span class="email__price">
+                            +$456
+                        </span>
+
+
+            </div>
+            <div class="email__item-sub">
+                <div class="email__left">
+                    <div class="email__count">
+                        <span>500</span>
+                        <span class="email__count-number">sqft</span>
+                    </div>
+                    <span class="email__subitem">
+                                Sq Ft Total
+                            </span>
+                </div>
+                <span class="email__price">
+                            +$2,456
+                        </span>
+
+
+            </div>
+
+        </div>
+        <h2 class="email__item-title email__item-total"><span>Total Price</span> <span class="email__item-total-count">$2456</span> </h2>
+        <hr style="margin: 24px 0">
+        <h3 class="email__regard">
+            Warm Regards,<br>
+            Brazil Floors
+        </h3>
+
+        <div class="footer">
+
+            <table class="email__footer" >
+                <tr>
+                    <td style="width: 100%">
+                        <div class="email__logo-footer">
+                            <img src="./img/email__logo-white.png" alt="">
+                        </div>
+
+                        <div class="email__social-wrap">
+                            <a href="" class="email__social">
+                                <img src="./img/email/Facebook.png" alt="">
+                            </a>
+                            <a href="" class="email__social">
+                                <img src="./img/email/Insta.png" alt="">
+                            </a>
+                            <a href="" class="email__social">
+                                <img src="./img/email/X.png" alt="">
+                            </a>
+                            <a href="" class="email__social">
+                                <img src="./img/email/LinkedIn.png" alt="">
+                            </a>
+                            <a href="" class="email__social">
+                                <img src="./img/email/Youtube.png" alt="">
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <table class="email__footer email__footer-bottom">
+            <tr>
+                <td>
+                    <a href="" class="email__icon">
+                        <img src="./img/email/Location.png" alt="">
+                        <span>Locations</span>
+                    </a>
+                </td>
+                <td>
+                    <a href="tel:8009090730" class="email__icon" style="text-align: center">
+                        <img src="./img/email/Phone.png" alt="">
+                        <span>800-909-0730</span>
+                    </a>
+                </td>
+                <td>
+                    <a href="mailto:sales@brazilfloors.com" class="email__icon" style="text-align: right">
+                        <img src="./img/email/Telegram.png" alt="">
+                        <span style="text-decoration: underline">sales@brazilfloors.com</span>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </main>
+</body>
+</html>
